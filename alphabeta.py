@@ -1,5 +1,5 @@
 MIN, MAX= -1000, 1000
-def minimax(depth, index, maximizingPlayer,values, alpha, beta):
+def alphabeta(depth, index, maximizingPlayer,values, alpha, beta):
     if depth == 3:
         return values[index]
     
@@ -8,7 +8,7 @@ def minimax(depth, index, maximizingPlayer,values, alpha, beta):
         optimum = MIN
     
         for i in range(0, 2):
-            val = minimax(depth + 1, index * 2 + i,
+            val = alphabeta(depth + 1, index * 2 + i,
             False, values, alpha, beta)
             optimum = max(optimum, val)
             alpha = max(alpha, optimum)
@@ -30,4 +30,4 @@ def minimax(depth, index, maximizingPlayer,values, alpha, beta):
 # Driver Code
 
 values = [2,3,5,9,0,1,7,5]
-print("The value is :", minimax(0, 0, True, values, MIN, MAX))
+print("The value is :", alphabeta(0, 0, True, values, MIN, MAX))
