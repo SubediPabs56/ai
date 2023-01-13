@@ -19,7 +19,7 @@ def alphabeta(depth, index, maximizingPlayer,values, alpha, beta):
     else:
         optimum = MAX
         for i in range(0, 2):
-            val = minimax(depth + 1, index * 2 + i,
+            val = alphabeta(depth + 1, index * 2 + i,
             True, values, alpha, beta)
             optimum = min(optimum, val)
             beta = min(beta, optimum)
