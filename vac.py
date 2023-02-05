@@ -6,7 +6,7 @@ a = int(input("Enter no. of rows:"))
 b = int(input("Enter no. of columns:"))
 room = [[1 for _ in range (b)]for _ in range (a)]
 print("All  the rooms are dirty")
-print(room)
+display(room)
 x=0
 y=0
 while x<a:
